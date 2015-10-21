@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Highcharts Example</title>
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <style type="text/css">
+${demo.css}
+        </style>
+        <script type="text/javascript">
+
+$(function () {
+    
+    Highcharts.setOptions({
+        lang: {
+            drillUpText: '<- Atrás'
+        }
+    });
+
+
+
+    // Create the chart
+    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Proporción de viviendas según forma de acceso al agua en el 2007'
+        },
+        subtitle: {
+            text: 'Haga click en las columnas para ver más detalles. Fuente: <a href="http://www.inei.gob.pe">INEI</a>.'
+        },
+        xAxis: {
+            type: 'category'
+        },
+        yAxis: {
+            title: {
+                text: 'Porcentaje del total'
+            }
+
+        },
+        legend: {
+            enabled: true
+        },
+        plotOptions: {
+            series: {
+                borderWidth: 0,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.y:.1f}%'
+                }
+            }
+        },
+
+        tooltip: {
+            headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+            pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> del total<br/>'
+        },
+
+        series: [{
+            name: "Distrito de Chala",
+            colorByPoint: false,
+            data: [{
+                name: "Red Pública",
+                y: 10.2,
+                drilldown: "RP-Chala"
+            }, {
+                name: "Otro Tipo",
+                y: 89.8,
+                drilldown: "Otro-Chala"
+            }]
+        }, {
+            name: "Provincia de Caravelí",
+            colorByPoint: false,
+            data: [{
+                name: "Red Pública",
+                y: 48.6,
+                drilldown: "RP-Caravelí"
+            }, {
+                name: "Otro Tipo",
+                y: 51.4,
+                drilldown: "Otro-Caravelí"
+            }]
+        }, {
+            name: "Perú",
+            colorByPoint: false,
+            data: [{
+                name: "Red Pública",
+                y: 67.4,
+                drilldown: "RP-Perú"
+            }, {
+                name: "Otro Tipo",
+                y: 32.6,
+                drilldown: "Otro-Perú"
+            }]
+        }],
+        
+        drilldown: {
+            series: [{
+                name: "Red Pública - Chala",
+                id: "RP-Chala",
+                data: [["RP en la vivienda", 6.6], ["RP fuera de la vivienda", 2.8], ["Pilón de uso público", 0.8]]
+            }, {
+                name: "Otro Tipo - Chala",
+                id: "Otro-Chala",
+                data: [["Camión-cisterna", 81.4], ["Pozo", 6.3], ["Río o acequia", 1.0], ["Vecino", 0.4], ["Otro", 0.7]]
+            }, {
+                name: "Red Pública - Caravelí",
+                id: "RP-Caravelí",
+                data: [["RP en la vivienda", 41.8], ["RP fuera de la vivienda", 5.1], ["Pilón de uso público", 1.7]]
+            }, {
+                name: "Otro Tipo - Caravelí",
+                id: "Otro-Caravelí",
+                data: [["Camión-cisterna", 26.4], ["Pozo", 5.8], ["Río o acequia", 16.3], ["Vecino", 1.9], ["Otro", 1.0]]
+            }, {
+                name: "Red Pública - Perú",
+                id: "RP-Perú",
+                data: [["RP en la vivienda", 54.8], ["RP fuera de la vivienda", 8.9], ["Pilón de uso público", 3.8]]
+            }, {
+                name: "Otro Tipo - Perú",
+                id: "Otro-Perú",
+                data: [["Camión-cisterna", 4.2], ["Pozo", 8.1], ["Río o acequia", 16.0], ["Vecino", 3.2], ["Otro", 1.2]]
+            }]
+        }
+    });
+});
+
+        </script>
+    </head>
+    <body>
+<script src="js/highcharts.js"></script>
+<script src="js/modules/exporting.js"></script>
+<!--<script src="js/modules/heatmap.js"></script>-->
+<script src="js/modules/data.js"></script>
+<script src="js/modules/drilldown.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+    </body>
+
+</html>

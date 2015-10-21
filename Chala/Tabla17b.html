@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Highmaps Example</title>
+
+        <script type="text/javascript" src="jquery/1.8.2/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function () {
+
+                var dataTrabajoChala2 = [{"code":"040301", "nombre2":"Caravelí"     , "pea1993":"1,088" , "pea2007":"1,321" , "crecpeaanualprom": 1.40  ,"value": 1.40  , "actividad1993":47, "actividad2007":51},
+                                         {"code":"040302", "nombre2":"Acarí"        , "pea1993":"1,714" , "pea2007":"1,846" , "crecpeaanualprom": 0.53  ,"value": 0.53  , "actividad1993":53, "actividad2007":62},
+                                         {"code":"040303", "nombre2":"Atico"        , "pea1993":"1,543" , "pea2007":"1,923" , "crecpeaanualprom": 1.58  ,"value": 1.58  , "actividad1993":60, "actividad2007":61},
+                                         {"code":"040304", "nombre2":"Atiquipa"     , "pea1993":"155"   , "pea2007":"417"   , "crecpeaanualprom": 7.32  ,"value": 7.32  , "actividad1993":50, "actividad2007":67},
+                                         {"code":"040305", "nombre2":"Bella Unión"  , "pea1993":"674"   , "pea2007":"2,674" , "crecpeaanualprom": 10.34 ,"value": 10.34 , "actividad1993":60, "actividad2007":76},
+                                         {"code":"040306", "nombre2":"Cahuacho"     , "pea1993":"264"   , "pea2007":"389"   , "crecpeaanualprom": 2.81  ,"value": 2.81  , "actividad1993":53, "actividad2007":62},
+                                         {"code":"040307", "nombre2":"Chala"        , "pea1993":"1,048" , "pea2007":"2,373" , "crecpeaanualprom": 6.01  ,"value": 6.01  , "actividad1993":60, "actividad2007":64},
+                                         {"code":"040308", "nombre2":"Chaparra"     , "pea1993":"719"   , "pea2007":"2,034" , "crecpeaanualprom": 7.71  ,"value": 7.71  , "actividad1993":63, "actividad2007":72},
+                                         {"code":"040309", "nombre2":"Huanuhuanu"   , "pea1993":"728"   , "pea2007":"1,395" , "crecpeaanualprom": 4.75  ,"value": 4.75  , "actividad1993":77, "actividad2007":74},
+                                         {"code":"040310", "nombre2":"Jaqui"        , "pea1993":"1,202" , "pea2007":"637"   , "crecpeaanualprom": -4.43 ,"value": -4.43 , "actividad1993":68, "actividad2007":51},
+                                         {"code":"040311", "nombre2":"Lomas"        , "pea1993":"371"   , "pea2007":"556"   , "crecpeaanualprom": 2.93  ,"value": 2.93  , "actividad1993":66, "actividad2007":62},
+                                         {"code":"040312", "nombre2":"Quicacha"     , "pea1993":"463"   , "pea2007":"774"   , "crecpeaanualprom": 3.74  ,"value": 3.74  , "actividad1993":49, "actividad2007":59},
+                                         {"code":"040313", "nombre2":"Yauca"        , "pea1993":"570"   , "pea2007":"713"   , "crecpeaanualprom": 1.61  ,"value": 1.61  , "actividad1993":53, "actividad2007":58}];
+
+                // Instanciate the map
+                $('#container').highcharts('Map', {
+
+                    chart : {
+                        borderWidth : 1,
+                        spacing: [30, 30, 30, 30]
+                    },
+
+                    title : {
+                        text : 'Crecimiento de la PEA en Caravelí'
+                    },
+
+                    subtitle: {
+                        text: 'Calculada para el período 1993-2007'
+                    },
+
+                    legend: {
+                        layout: 'horizontal',
+                        borderWidth: 0,
+                        backgroundColor: 'rgba(255,255,255,0.85)',
+                        floating: true,
+                        verticalAlign: 'bottom',
+                        y: 25
+                    },
+
+                    mapNavigation: {
+                        enabled: false
+                    },
+
+                    colorAxis: {
+                        min: -20,
+                        max: 20,
+                        type: 'linear',
+                        minColor: '#FF6666',
+                        maxColor: '#3399FF',
+                        stops: [
+                            [0, '#FF6666'],
+                            [0.5, '#FFFFFF'],
+                            [1, '#3399FF']
+                        ]
+                    },
+
+                    tooltip: {
+                        useHTML: true,
+                        positioner: function () {
+                            return { x: 30, y: 330 };
+                        }
+                    },
+
+                    series: [{
+                        animation: {
+                            duration: 100
+                        },
+                        data : dataTrabajoChala2,
+                        mapData: Highcharts.maps['peru/arequipa/caraveli'],
+                        joinBy: ['IDDIST', 'code'],
+                        dataLabels: {
+                            enabled: true,
+                            color: 'black',
+                            format: '{point.nombre2}'
+                        },
+                        name: 'Crec. promedio anual 1993-2007',
+                        tooltip: {
+                            pointFormat: '<span><b>{point.nombre2}:</b> {point.crecpeaanualprom}%<br>' +
+                                         '<small>PEA 1993: {point.pea1993} hab.</small><br>' +
+                                         '<small>PEA 2007: {point.pea2007} hab.</small></span>'
+                        }
+                    }]
+                });
+                
+            });
+        </script>
+
+<script src="js-maps/highmaps.js"></script>
+<script src="js-maps/modules/data.js"></script>
+<script src="shapechala.js"></script>
+
+    </head>
+
+    <body>
+
+        <div id="container" style="height: 500px; min-width: 310px; max-width: 600px; margin: 0 auto"></div>
+
+    </body>
+</html>

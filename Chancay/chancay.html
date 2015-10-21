@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Diagnóstico Socioeconómico del Distrito de Chancay</title>
+	<link rel="stylesheet" type="text/css" href="estilos/estilochancay1.css">
+
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1.1", {packages:["table"]});
+      google.setOnLoadCallback(drawTable);
+
+      function drawTable() {
+        var data = new google.visualization.DataTable();
+
+        data.addColumn('string', 'Indicadores de Edades');
+        data.addColumn('number', 'Huaral 1993');
+        data.addColumn('number', 'Huaral 2007');
+        data.addColumn('number', 'Perú 1993');
+        data.addColumn('number', 'Perú 2007');
+        
+        
+        data.addRows([         
+          ['Edad Promedio', {v: 26.2, f: '26.2'}, {v: 29.5, f: '29.5'}, {v: 25.0, f: '25.0'}, {v: 28.4, f: '28.4'}],
+          ['Edad Mediana', {v: 22.0, f: '22.0'}, {v: 26.0, f: '26.0'}, {v: 21.0, f: '21.0'}, {v: 25.0, f: '25.0'}],
+          ['Tasa de Dependencia', {v: 0.641, f: '64.1%'}, {v: 0.558, f: '55.8%'}, {v: 0.714, f: '71.4%'}, {v: 0.585, f: '58.5%'}]
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+
+        table.draw(data, {showRowNumber: true, width: '100%', height: '40%'});
+      }
+    </script>
+
+</head>
+<article>
+	<h1>Demografía</h1>
+	<p>En el año 2014, la provincia de Huaral tenía una población de 187,779 habitantes, lo que la convertía en la cuarta provincia más poblada de la región de Lima (de un total de 10). La provincia contiene el 1.94% del total de habitantes de la región Lima. En el año 2007, la provincia de Huaral tenía una población estimada de 170,266 habitantes , lo que representa un crecimiento poblacional de aproximadamente 1.41% anual en el periodo comprendido entre los años 2007 y 2014. Como referencia, la tasa de crecimiento poblacional del Perú en su conjunto durante el mismo periodo es de 1.13%. En los últimos años, la población de la provincia de Huaral ha crecido más que la población del país en su conjunto. Utilizando la información de población proyectada por el INEI, se pueden realizar diversos análisis de las tendencias demográficas recientes de la provincia de Huaral. En la Tabla 1 se muestra lo anteriormente descrito enmarcado en el contexto regional y nacional.</p>
+	
+	<div class="grafico">
+		<h2>Tabla 1: Población proyectada 2000-2014</h2>
+		<iframe class="highcharts-iframe" src="http://cloud.highcharts.com/embed/ysemup" style="border: 0; width: 100%; height: 500px"></iframe>	
+		<p>Elaboración Propia. Fuente: Población Perú 2000-2015.</p>
+	</div> 
+	
+	<p>Durante el periodo comprendido entre los años 2000 y 2014, la tasa de crecimiento anual de la población del Perú fue de 1.23%, de la Región Lima 1.59% y de la provincia de Huaral 1.50%. Se observa que la población de la provincia de Huaral creció en mayor proporción que la población a nivel de país. Por otra parte, en comparación con la región de Lima, destaca que la provincia ha crecido en menor proporción. <span style="color: red" class="revisar">Dicha diferencia podría atribuirse a la migración desde otras provincias de la región hacia la provincia de Huaral. Sin embargo, se requiere de un estudio de los patrones de inmigración en detalle para sostener una conclusión definitiva a este respecto.</span></p>
+
+	<div class="grafico">
+		<h2>Tabla 1.2: Tasa de Crecimiento 2000-2014</h2>
+		<iframe class="highcharts-iframe" src="http://cloud.highcharts.com/embed/axewav" style="border: 0; width: 100%; height: 500px"></iframe>
+		<p>Elaboración Propia. Fuente: Población Perú 2000-2015.</p>
+	</div> 
+
+	<p>La Tabla 2 muestra algunas estadísticas de población y extensión de los distritos de la provincia. La población de la provincia de Huaral se concentra en el distrito costero de Huaral, que en el año 2014 albergaba a más de la mitad de la población de la provincia. Hay dos distritos que tienen acceso al mar y concentran a más del 40% de los habitantes de la provincia: Chancay y Aucallama. <span style="color: red" class="revisar"> Entre los distritos que no tienen acceso directo al mar y que contienen más del 4% de población restante,Altavillos Alto, Altavillos Bajo, Ihuari, Lampian, Pacaraos, San Miguel de Acos, Santa Cruz de Andamarca, Sumbilca y Veintisiete de Noviembre se encuentran ubicados en la zona andina de la provincia.</span></p>
+
+	<div class="grafico">
+		<h2>Tabla 2: Algunas variables poblacionales de los distritos de la provincia de Huaral</h2>
+		<iframe class="highcharts-iframe" src="http://cloud.highcharts.com/embed/ivabev" style="border: 0; width: 100%; height: 500px"></iframe>
+		<p>Elaboración propia. Fuente: Población Perú 2000-2015 y Censos (INEI, 1993, 1997 y 2014).</p>
+	</div> 
+
+	<p>Los distritos de mayor densidad poblacional en la provincia de Huaral son los distritos de Chancay y Huaral. En general, los distritos ubicados en la costa tienen mayor densidad poblacional que los ubicados en la sierra de la provincia. Otro aspecto resaltante se refiere a la variación poblacional entre el año 2000 y el 2014.</p>
+	
+	<div class="grafico">
+		<h2>Tabla 2.1: Algunas variables poblacionales y geográficas de los distritos de la provincia de Huaral</h2>
+		<iframe class="highcharts-iframe" src="http://cloud.highcharts.com/embed/egobyb" style="border: 0; width: 100%; height: 500px"></iframe>
+		<p>Elaboración propia. Fuente: Población Perú 2000-2015 y Censos (INEI, 1993, 1997 y 2014).</p>
+	</div> 
+
+	<p>Los distritos de Altavillos Alto, Altavillos Bajo, Ihuari, Lampian, Pacaraos, San Miguel de Acos, Sumbilca y Veintisiete de Setiembre presentan reducción poblacional en dicho periodo. Como caso extremo, el distrito de Altavillos Alto presenta una reducción poblacional del 45% en el periodo entre 2000 y 2014. En contraste, el distrito de Chancay presenta un crecimiento acumulado de casi el 40% en el mismo periodo. <span style="color: green" class="comprobar"> El fuerte crecimiento poblacional en Chancay se explicaría en gran medida por la inmigración, dado que es poco probable que los patrones de fecundidad y mortalidad hayan cambiado significativamente en un periodo de tiempo tan corto.</span></p>
+
+	<div class="grafico">
+		<h2>Tabla 2.2: Algunas variables poblacionales de los distritos de la provincia de Huaral</h2> 
+		<iframe class="highcharts-iframe" src="http://cloud.highcharts.com/embed/iponir" style="border: 0; width: 100%; height: 500px"></iframe>
+		<p>Elaboración propia. Fuente: Población Perú 2000-2015 y Censos (INEI, 1993, 1997 y 2014).</p>
+	</div>
+
+	<p>La estructura de edades de la población de la provincia se puede obtener con información de los censos nacionales realizados por el INEI. En la Tabla 3 se muestran los grupos de edades para la provincia de Huaral y en la Tabla 3.1 para el Perú.</p>
+
+	<div class="grafico">
+		<h2>Tabla 3: Distribución de la población de Huaral por grupos de edad para los años 1993 y 2007</h2>
+		<iframe class="highcharts-iframe" src="http://cloud.highcharts.com/embed/epiviw" style="border: 0; width: 100%; height: 500px"></iframe>
+		<p>Elaboración propia. Fuente: Censos Nacionales. (INEI, 1993 y 2007)</p>
+	</div>
+
+	<div class="grafico">
+		<h2>Tabla 3.1: Distribución de la población de Perú por grupos de edad para los años 1993 y 2007</h2>
+		<iframe class="highcharts-iframe" src="http://cloud.highcharts.com/embed/yzunet" style="border: 0; width: 100%; height: 500px"></iframe>
+		<p>Elaboración propia. Fuente: Censos Nacionales. (INEI, 1993 y 2007)</p>
+	</div>
+
+	<p>La población de la provincia de Huaral está compuesta en su mayoría por jóvenes. Cerca del 55% de la población censada en el año 2007 tenía menos de 30 años. La situación no es muy diferente a la del Perú en su conjunto, cuya población menor de 30 años representaba aproximadamente 58% de la población total en el 2007. <span style="color: red" class="revisar"> Para esta provincia, entre 1993 y 2007, el segmento de población de 0 a 14 años disminuyó su participación de 34% a 28.6% y el segmento de los de 65 a más años incrementó su proporción de 5% a 7.3%. Los cambios son cualitativamente similares si se considera al país en su conjunto para el mismo periodo.</span></p>
+
+	<div class="tabla">
+		<h2>Tabla 4: Indicadores de las edades de la población para los años 1993 y 2007</h2>
+
+    	<div id="table_div" style="width: 100%; height: 600px;"></div>
+
+		<p>Elaboración propia. Fuente: Censos Nacionales. (INEI, 1993 y 2007)</p>
+	</div>
+
+	<p>De la Tabla 4, se determina que el promedio de edades de la población censada en la provincia de Huaral cambió de 26.2 años en 1993 a 29.5 años en el año 2007. La variación en el mismo periodo es cualitativamente parecida a nivel del país. Sin embargo, en el año 2007 tanto la edad promedio como la edad mediana en la provincia son mayores a las del Perú. <span style="color: red" class="revisar">Este hecho podría explicarse por la migración de la población joven hacia otras áreas del país.</span></p>
+
+	<p>Para evaluar comparativamente la proporción de las personas que no están en edad de trabajar con respecto a las personas que sí, se utiliza el indicador de la tasa de dependencia<span class="citaalpie"><sup>1</sup></span>.</p>
+
+	<p><span class="notaalpie">(1) La tasa de dependencia se define como el recíproco del cociente de la población en edad de trabajar (de 15 a 64 años) entre el resto de la población. A menor tasa de dependencia hay más personas en edad de trabajar con respecto al resto de la población.</span></p>
+
+	<p>Los cambios en la estructura demográfica entre censos provocaron que dicha tasa en el caso de la provincia de Huaral pase de 64.1% en el año 1993 a 55.8% en el año 2007.</p>
+
+</article>
+</html>

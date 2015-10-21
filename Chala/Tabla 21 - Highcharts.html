@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Highcharts Example</title>
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+        <script type="text/javascript">
+$(function () {
+
+    $('#container').highcharts({
+
+        chart: {
+            type: 'heatmap',
+            marginTop: 50,
+            marginBottom: 80
+        },
+
+        title: {
+            text: 'Cabezas de ganado según tipo en los distritos de Caravelí'
+        },
+
+        exporting: {
+            enabled: false
+        },
+
+        xAxis: {
+            categories: ['Caravelí', 'Acarí', 'Atico', 'Atiquipa', 'Bella Unión', 'Cahuacho', 'Chala', 'Chaparra', 'Huanuhuanu', 'Jaqui', 'Lomas', 'Quicacha', 'Yauca']
+        },
+
+        yAxis: {
+            categories: ['Vacuno', 'Ovino', 'Porcino', 'Aviar'],
+            title: null
+        },
+
+        colorAxis: {
+            min: 0,
+            minColor: '#FFFFFF',
+            maxColor: Highcharts.getOptions().colors[0]
+        },
+
+        legend: {
+            align: 'right',
+            layout: 'vertical',
+            margin: 0,
+            verticalAlign: 'top',
+            y: 35,
+            symbolHeight: 270
+        },
+
+        tooltip: {
+            formatter: function () {
+                return '<b>' + this.series.xAxis.categories[this.point.x] + '</b> tiene <br><b>' +
+                    this.point.value + '%</b> del ganado<br><b>' + this.series.yAxis.categories[this.point.y] + '</b>';
+            }
+        },
+
+        series: [{
+            name: 'Porcentaje por provincia',
+            borderWidth: 1,
+            data:  [[0,  0, 20.1 ], [0,  1, 1.6  ], [0,  2, 19.3 ], [0,  3, 7.4  ],
+                    [1,  0, 14.9 ], [1,  1, 11.0 ], [1,  2, 30.2 ], [1,  3, 37.0 ],
+                    [2,  0, 2.0  ], [2,  1, 4.9  ], [2,  2, 5.3  ], [2,  3, 3.8  ],
+                    [3,  0, 9.3  ], [3,  1, 3.5  ], [3,  2, 2.1  ], [3,  3, 1.6  ],
+                    [4,  0, 5.8  ], [4,  1, 16.0 ], [4,  2, 18.1 ], [4,  3, 31.5 ],
+                    [5,  0, 26.0 ], [5,  1, 17.3 ], [5,  2, 6.8  ], [5,  3, 1.8  ],
+                    [6,  0, 1.8  ], [6,  1, 1.9  ], [6,  2, 0.3  ], [6,  3, 0.8  ],
+                    [7,  0, 0.3  ], [7,  1, 1.0  ], [7,  2, 5.7  ], [7,  3, 1.7  ],
+                    [8,  0, 6.0  ], [8,  1, 6.1  ], [8,  2, 1.4  ], [8,  3, 1.0  ],
+                    [9,  0, 2.1  ], [9,  1, 6.6  ], [9,  2, 2.7  ], [9,  3, 5.4  ],
+                    [10, 0, 0.0  ], [10, 1, 0.0  ], [10, 2, 0.0  ], [10, 3, 0.0  ],
+                    [11, 0, 11.1 ], [11, 1, 27.8 ], [11, 2, 6.7  ], [11, 3, 4.6  ],
+                    [12, 0, 0.6  ], [12, 1, 2.4  ], [12, 2, 1.5  ], [12, 3, 3.4  ]],
+            dataLabels: {
+                enabled: true,
+                color: '#000000'
+            }
+        }]
+
+    });
+});
+
+/*
+            Vacuno           Ovino           Porcino         Aviar
+Caravelí    [[0,  0, 20.1 ], [0,  1, 1.6  ], [0,  2, 19.3 ], [0,  3, 7.4  ]]
+Acari       [[1,  0, 14.9 ], [1,  1, 11.0 ], [1,  2, 30.2 ], [1,  3, 37.0 ]]
+Atico       [[2,  0, 2.0  ], [2,  1, 4.9  ], [2,  2, 5.3  ], [2,  3, 3.8  ]]
+Atiquipa    [[3,  0, 9.3  ], [3,  1, 3.5  ], [3,  2, 2.1  ], [3,  3, 1.6  ]]
+Bella Unión [[4,  0, 5.8  ], [4,  1, 16.0 ], [4,  2, 18.1 ], [4,  3, 31.5 ]]
+Cahuacho    [[5,  0, 26.0 ], [5,  1, 17.3 ], [5,  2, 6.8  ], [5,  3, 1.8  ]]
+Chala       [[6,  0, 1.8  ], [6,  1, 1.9  ], [6,  2, 0.3  ], [6,  3, 0.8  ]]
+Chaparra    [[7,  0, 0.3  ], [7,  1, 1.0  ], [7,  2, 5.7  ], [7,  3, 1.7  ]]
+Huanuhuanu  [[8,  0, 6.0  ], [8,  1, 6.1  ], [8,  2, 1.4  ], [8,  3, 1.0  ]]
+Jaqui       [[9,  0, 2.1  ], [9,  1, 6.6  ], [9,  2, 2.7  ], [9,  3, 5.4  ]]
+Lomas       [[10, 0, 0.0  ], [10, 1, 0.0  ], [10, 2, 0.0  ], [10, 3, 0.0  ]]
+Quicacha    [[11, 0, 11.1 ], [11, 1, 27.8 ], [11, 2, 6.7  ], [11, 3, 4.6  ]]
+Yauca       [[12, 0, 0.6  ], [12, 1, 2.4  ], [12, 2, 1.5  ], [12, 3, 3.4  ]]
+
+Total       [[13, 0, 100.0], [13, 1, 100.0], [13, 2, 100.0], [13, 3, 100.0]]
+
+ */
+
+        </script>
+    </head>
+    <body>
+<script src="js/highcharts.js"></script>
+<script src="js/modules/exporting.js"></script>
+<script src="js/modules/heatmap.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+    </body>
+
+</html>

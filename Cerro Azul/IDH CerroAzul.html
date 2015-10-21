@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>IDH CERRO AZUL</title>
+    <link rel="stylesheet" type="text/css" href="estilos/estilochancay1.css">
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	
+    <script src="js/highcharts.js"></script>
+    <script src="js/modules/exporting.js"></script>
+
+    <script type="text/javascript">
+
+        $(function () {
+            $('#container').highcharts({
+                 chart: {
+                     type: 'column'
+                },
+                title: {
+                    text: 'Evolución del IDH en la provincia de Cañete y en el distrito de Cerro Azul'
+                },
+                subtitle: {
+                    text: 'Fuente: PNUD'
+                },
+                 xAxis: {
+                    categories: ['2003', '2007', '2010', '2011', '2012'],
+                    crosshair: true
+                },
+                yAxis: {
+                     min: 0,
+                     title: {
+                        text: 'Índice de Desarrollo Humano'
+                    }
+                 },
+                tooltip: {
+                     headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                     pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}</td>' +
+                        '</tr><tr><td style="padding:0"><b>Puesto {point.ranking} de {point.todos}</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: false,
+                    useHTML: true
+                 },
+                plotOptions: {
+                    column: {
+                        dataLabels: {
+                            enabled: true
+                         },
+                        pointPadding: 0.2,
+                        borderWidth: 0
+                    }
+                },
+
+                 series: [{
+                    name: 'Provincia de Cañete',
+                    data: [{y: 0.43, ranking: 13, tipo: 'provincial', todos: 195},
+                           {y: 0.37, ranking: 40, tipo: 'provincial', todos: 195},
+                           {y: 0.49, ranking: 22, tipo: 'provincial', todos: 195},
+                           {y: 0.49, ranking: 29, tipo: 'provincial', todos: 195},
+                           {y: 0.52, ranking: 22, tipo: 'provincial', todos: 195}]
+
+                 }, {
+                    name: 'Distrito de Cerro Azul',
+                    data: [{y: 0.39, ranking: 247, tipo: 'distrital', todos: 1834},
+                           {y: 0.34, ranking: 375, tipo: 'distrital', todos: 1834},
+                           {y: 0.44, ranking: 343, tipo: 'distrital', todos: 1834},
+                           {y: 0.44, ranking: 366, tipo: 'distrital', todos: 1834},
+                           {y: 0.46, ranking: 340, tipo: 'distrital', todos: 1834}]
+
+                 }]
+            });
+        });
+		</script>
+</head>
+
+<article>
+    <h1>Desarrollo Humano y Bienestar</h1>
+    <p>El Índice de Desarrollo Humano (IDH) es un indicador multidimensional que combina estadísticas relativas a varias características que influyen en el bienestar de las personas. El IDH integra indicadores de salud, educación y estándar de vida. E gráfico 8 ilustra la metodología utilizada en el cálculo.</p>
+
+    <div class="grafico">
+        <h2>Gráfico 8: Presentación gráfica del cálculo del Índice de Desarrollo Humano</h2> 
+
+        <img src="imagenes/IDH Figura v3 - Web.png" alt="Indice de Desarrollo Humano">
+
+        <p>Elaboración Propia. Fuente: PNUD , 2013</p>
+    </div>
+
+    <P>Como los individuos tienen la aspiración de vivir una vida saludable, existe una dimensión del desarrollo que se refleja en el IDH al considerar la esperanza de vida al nacer de las personas. Así, se entiende que las que han disfrutado de mejor salud poseen una esperanza de vida mayor. Por otra parte, cada individuo debería tener la posibilidad de acceder al conocimiento, lo que se refleja en el promedio geométrico de dos indicadores que reflejan las opciones educativas disponibles a las personas: el primer indicador consiste en la estimación de los años de educación promedio de los mayores de 25 años y es un cálculo de las “potencialidades” educativas de un grupo de población particular; mientras que el segundo indicador consiste en la proporción de la población de 18 años que ha completado la secundaria y mide la “realización” educativa de cada grupo poblacional. Por último, se espera que cada persona obtenga los medios necesarios para vivir de manera digna, lo que se mide utilizando el indicador de ingreso por persona. Técnicamente, el IDH es un promedio geométrico de los índices de educación, de esperanza de vida y de ingresos donde cada índice representa la posición normalizada (en la escala de 0 a 1) de la localidad en cada categoría.</P>
+
+    <P>El Programa de las Naciones Unidas para el Desarrollo (PNUD), ha calculado valores del IDH para el Perú. El gráfico 8 presenta la evolución del indicador para la provincia del Cañete y para el distrito de Cerro Azul tal como es calculado por el PNUD. Los cálculos consideran la información de 195 provincias y 1834 distritos.</P>
+
+    <div class="grafico">
+        <h2>Gráfico 9: Evolución del IDH en la provincia de Cañete y el distrito de Cerro Azul</h2> 
+
+        <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+        <p>Elaboración propia. Fuente: PNUD , 2013</p>
+    </div>
+
+    <p>La provincia de Cañete mejoró sus condiciones de desarrollo humano en el periodo 2003-2012. A pesar de ello, entre los años 2003 y 2007, se produjo un descenso absoluto y una caída de posiciones en términos relativos (en comparación con otras provincias). De la misma manera, el distrito de Cerro Azul presentó la mayor caída del IDH absoluto y relativo en el periodo 2003 y 2007, para luego seguir mostrando el retroceso.</p>
+
+</article>
+</html>        

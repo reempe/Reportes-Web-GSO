@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts Example</title>
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<style type="text/css">
+${demo.css}
+		</style>
+		<script type="text/javascript">
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: 'Desembarque de recursos hidrobiológicos marítimos para consumo humano directo en los puertos de la provincia de Caravelí'
+        },
+        subtitle: {
+            text: 'En toneladas métricas brutas'
+        },
+        xAxis: {
+            categories: ['2006', '2007', '2008', '2009', '2010', '2011', '2012']
+        },
+        
+        yAxis: [{ // Primary yAxis
+            labels: {
+                format: '{value} TM'
+            },
+            title: {
+                text: 'Puertos de Atico y Lomas'
+            },
+        
+        }, { // Secondary yAxis
+            gridLineWidth: 0,
+            title: {
+                text: 'Puerto de Chala'
+            },
+            labels: {
+                format: '{value} TM'
+            },
+            opposite: true
+        }],
+
+        plotOptions: {
+            line: {
+                dataLabels: {
+                    enabled: true
+                },
+                enableMouseTracking: false
+            }
+        },
+        series: [{
+            name: 'Lomas',
+            yAxis: 0,
+            data: [3663, 3540, 1979, 2212, 3875, 1208, 2394]
+        }, {
+            name: 'Chala',
+            yAxis: 1,
+            data: [338, 461, 450, 108, 25, 20, 39]
+        }, {
+            name: 'Atico',
+            yAxis: 0,
+            data: [8053, 6928, 1270, 42, 5277, 1009, 3416]
+        }]
+    });
+});
+		</script>
+	</head>
+	<body>
+<script src="js/highcharts.js"></script>
+<script src="js/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+	</body>
+</html>

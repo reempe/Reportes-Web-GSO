@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts Example</title>
+
+		<script type="text/javascript" src="jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript">
+
+$(function () {
+
+    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+
+        exporting: {
+            enabled: false
+        },
+
+        title: {
+            text: 'Población proyectada y tasa de crecimiento 2000-2014'
+        },
+        subtitle: {
+            text: 'Con base en el año 2000'
+        },
+        xAxis: {
+            categories: ['2000', '2005', '2010', '2014'],
+            crosshair: true
+        },
+        yAxis: {
+            min: 90,
+            max: 130,
+            title: {
+                text: 'Índice en el año 2000 = 100'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}</td>' +
+                '</tr><tr><td style="padding:0"><b>{point.poblacion:,.0f} habitantes</b></td></tr>' +
+                '<tr><td style="padding:0">Crec. 2000-14: <b>{point.crecimiento}</b></td></tr>',
+            footerFormat: '</table>',
+            shared: false,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                dataLabels: {
+                    enabled: true
+                },
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Provincia de Caravelí',
+            data: [{y: 100.0, poblacion: 33241, crecimiento:'1.40%'},
+                   {y: 107.9, poblacion: 35875, crecimiento:'1.40%'},
+                   {y: 115.2, poblacion: 38288, crecimiento:'1.40%'},
+                   {y: 121.5, poblacion: 40373, crecimiento:'1.40%'}]
+
+        }, {
+            name: 'Región Arequipa',
+            data: [{y: 100.0, poblacion: 1084725, crecimiento:'1.15%'},
+                   {y: 106.5, poblacion: 1155267, crecimiento:'1.15%'},
+                   {y: 112.3, poblacion: 1218268, crecimiento:'1.15%'},
+                   {y: 117.4, poblacion: 1273180, crecimiento:'1.15%'}]
+
+        }, {
+            name: 'Perú',
+            data: [{y: 100.0, poblacion: 25983588, crecimiento:'1.23%'},
+                   {y: 107.0, poblacion: 27810540, crecimiento:'1.23%'},
+                   {y: 113.4, poblacion: 29461933, crecimiento:'1.23%'},
+                   {y: 118.6, poblacion: 30817696, crecimiento:'1.23%'}]
+
+        }]
+    });
+});
+		</script>
+	</head>
+	<body>
+<script src="js/highcharts.js"></script>
+<script src="js/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+	</body>
+</html>

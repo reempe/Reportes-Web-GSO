@@ -1,0 +1,13 @@
+[{ "code": "040301", "nombre": "CARAVELI"     , "value": -0.22 , "nombre2": "Caravelí"     , "poblacion2000": 3864  , "poblacion2014": 3749  , "area": 727.68   , "densidad": 5.2  , "crec2000_2014": -0.22 },
+ { "code": "040302", "nombre": "ACARI"        , "value": -2.83 , "nombre2": "Acarí"        , "poblacion2000": 4956  , "poblacion2014": 3318  , "area": 799.21   , "densidad": 4.2  , "crec2000_2014": -2.83 },
+ { "code": "040303", "nombre": "ATICO"        , "value": -0.04 , "nombre2": "Atico"        , "poblacion2000": 4197  , "poblacion2014": 4173  , "area": 3146.24  , "densidad": 1.3  , "crec2000_2014": -0.04 },
+ { "code": "040304", "nombre": "ATIQUIPA"     , "value":  1.76 , "nombre2": "Atiquipa"     , "poblacion2000": 705   , "poblacion2014": 900   , "area": 423.55   , "densidad": 2.1  , "crec2000_2014":  1.76 },
+ { "code": "040305", "nombre": "BELLA UNION"  , "value":  5.85 , "nombre2": "Bella Unión"  , "poblacion2000": 2833  , "poblacion2014": 6279  , "area": 1588.39  , "densidad": 4.0  , "crec2000_2014":  5.85 },
+ { "code": "040306", "nombre": "CAHUACHO"     , "value": -0.11 , "nombre2": "Cahuacho"     , "poblacion2000": 922   , "poblacion2014": 908   , "area": 1412.10  , "densidad": 0.6  , "crec2000_2014": -0.11 },
+ { "code": "040307", "nombre": "CHALA"        , "value":  3.69 , "nombre2": "Chala"        , "poblacion2000": 3959  , "poblacion2014": 6575  , "area": 378.38   , "densidad": 17.4 , "crec2000_2014":  3.69 },
+ { "code": "040308", "nombre": "CHAPARRA"     , "value":  4.52 , "nombre2": "Chaparra"     , "poblacion2000": 2787  , "poblacion2014": 5176  , "area": 1473.19  , "densidad": 3.5  , "crec2000_2014":  4.52 },
+ { "code": "040309", "nombre": "HUANUHUANU"   , "value":  3.47 , "nombre2": "Huanuhuanu"   , "poblacion2000": 1966  , "poblacion2014": 3169  , "area": 708.52   , "densidad": 4.5  , "crec2000_2014":  3.47 },
+ { "code": "040310", "nombre": "JAQUI"        , "value": -3.74 , "nombre2": "Jaqui"        , "poblacion2000": 2238  , "poblacion2014": 1313  , "area": 424.73   , "densidad": 3.1  , "crec2000_2014": -3.74 },
+ { "code": "040311", "nombre": "LOMAS"        , "value":  1.54 , "nombre2": "Lomas"        , "poblacion2000": 1063  , "poblacion2014": 1316  , "area": 452.70   , "densidad": 2.9  , "crec2000_2014":  1.54 },
+ { "code": "040312", "nombre": "QUICACHA"     , "value": -0.08 , "nombre2": "Quicacha"     , "poblacion2000": 1911  , "poblacion2014": 1890  , "area": 1048.42  , "densidad": 1.8  , "crec2000_2014": -0.08 },
+ { "code": "040313", "nombre": "YAUCA"        , "value": -0.96 , "nombre2": "Yauca"        , "poblacion2000": 1840  , "poblacion2014": 1607  , "area": 556.30   , "densidad": 2.9  , "crec2000_2014": -0.96 }]

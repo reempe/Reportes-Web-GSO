@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Highmaps Example</title>
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function () {
+
+                $.getJSON('https://raw.githubusercontent.com/reempe/ChalaWeb/master/chalamapa4.json', function (data) {
+
+                    // Make codes uppercase to match the map data
+                    $.each(data, function () {
+                        this.code = this.code.toUpperCase();
+                    });
+
+                    // Instanciate the map
+                    $('#container').highcharts('Map', {
+
+                        chart : {
+                            borderWidth : 1,
+                            spacing: [30, 30, 30, 30]
+                        },
+
+                        title : {
+                            text : 'Crecimiento poblacional en los distritos de Caravelí'
+                        },
+
+                        subtitle: {
+                            text: 'Periodo comprendido entre los años 2000 y 2014'
+                        },
+
+                        legend: {
+                            layout: 'horizontal',
+                            borderWidth: 0,
+                            backgroundColor: 'rgba(255,255,255,0.85)',
+                            floating: true,
+                            verticalAlign: 'bottom',
+                            y: 25
+                        },
+
+                        mapNavigation: {
+                            enabled: false
+                        },
+
+                        colorAxis: {
+                            min: -10,
+                            max: 10,
+                            type: 'linear',
+                            minColor: '#FF6666',
+                            maxColor: '#3399FF',
+                            stops: [
+                                [0, '#FF6666'],
+                                [0.5, '#FFFFFF'],
+                                [1, '#3399FF']
+                            ]
+                        },
+
+                        tooltip: {
+                            useHTML: true,
+                            positioner: function () {
+                                return { x: 30, y: 340 };
+                            }
+                        },
+
+                        series: [{
+                            animation: {
+                                duration: 100
+                            },
+                            data : data,
+                            mapData: Highcharts.maps['peru/arequipa/caraveli'],
+                            joinBy: ['IDDIST', 'code'],
+                            dataLabels: {
+                                enabled: true,
+                                color: 'black',
+                                format: '{point.nombre2}'
+                            },
+                            name: 'Crecimiento Poblacional 2000-2014',
+                            tooltip: {
+                                pointFormat: '<b>{point.nombre2}:</b> {point.crec2000_2014}%<br>' +
+                                             '<small>Población 2000: {point.poblacion2000} hab.</small><br>' +
+                                             '<small>Población 2014: {point.poblacion2014} hab.</small>'
+                            }
+                        }]
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+<script src="js-maps/highmaps.js"></script>
+<script src="js-maps/modules/data.js"></script>
+<script src="shapechala.js"></script>
+
+<div id="container" style="height: 500px; min-width: 310px; max-width: 600px; margin: 0 auto"></div>
+
+    </body>
+</html>

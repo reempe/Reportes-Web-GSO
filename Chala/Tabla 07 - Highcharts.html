@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts Example</title>
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<style type="text/css">
+${demo.css}
+		</style>
+		<script type="text/javascript">
+
+$(function () {
+
+    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Tasa de alfabetización de la población de 15 años a más'
+        },
+        subtitle: {
+            text: 'En porcentajes'
+        },
+        xAxis: {
+            categories: ['2000', '2005', '2010', '2014'],
+            crosshair: true
+        },
+        yAxis: {
+            min: 80,
+            max: 100,
+            title: {
+                text: 'Porcentaje'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}</td>' +
+                '</tr><tr><td style="padding:0"><b>{point.y} por ciento</b></td></tr>',
+            footerFormat: '</table>',
+            shared: false,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                dataLabels: {
+                    enabled: true
+                },
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Distrito de Chala',
+            data: [{y: 92},
+                   {y: 97}]
+
+        }, {
+            name: 'Provincia de Caravelí',
+            data: [{y: 90},
+                   {y: 95}]
+
+        }, {
+            name: 'Perú',
+            data: [{y: 87},
+                   {y: 93}]
+
+        }]
+    });
+});
+		</script>
+	</head>
+	<body>
+<script src="js/highcharts.js"></script>
+<script src="js/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+	</body>
+</html>
