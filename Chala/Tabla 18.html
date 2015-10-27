@@ -13,12 +13,16 @@ $(function () {
 
         chart: {
             type: 'heatmap',
-            marginTop: 50,
+            marginTop: 80,
             marginBottom: 80
         },
 
         title: {
-            text: 'Cabezas de ganado según tipo en Caravelí'
+            text: 'PEA ocupada de 14 o más años según rama de actividad'
+        },
+
+        subtitle: {
+            text: 'En porcentajes'
         },
 
         exporting: {
@@ -31,7 +35,8 @@ $(function () {
 
         yAxis: {
             categories: ['Caravelí', 'Acarí', 'Atico', 'Atiquipa', 'Bella Unión', 'Cahuacho', 'Chala', 'Chaparra', 'Huanuhuanu', 'Jaqui', 'Lomas', 'Quicacha', 'Yauca'],
-            title: null
+            title: null,
+            reversed: true
         },
 
         colorAxis: {
@@ -45,14 +50,14 @@ $(function () {
             layout: 'vertical',
             margin: 0,
             verticalAlign: 'top',
-            y: 35,
-            symbolHeight: 270
+            y: 65,
+            symbolHeight: 240
         },
 
         tooltip: {
             formatter: function () {
-                return '<b>' + this.series.xAxis.categories[this.point.x] + '</b> tiene <br><b>' +
-                    this.point.value + '%</b> del ganado<br><b>' + this.series.yAxis.categories[this.point.y] + '</b>';
+                return '<span><b>' + this.series.xAxis.categories[this.point.x] + '</b> ocupa <br><b>' +
+                    this.point.value + '%</b> de la PEA de <br><b>' + this.series.yAxis.categories[this.point.y] + '</b></span>';
             }
         },
 

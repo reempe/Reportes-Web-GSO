@@ -24,7 +24,7 @@ $(function () {
             type: 'column'
         },
         title: {
-            text: 'Proporción de viviendas según forma de acceso al agua en el 2007'
+            text: 'Proporción de viviendas según el material de construcción empleado en los pisos en el 2007'
         },
         subtitle: {
             text: 'Haga click en las columnas para ver más detalles. Fuente: <a href="http://www.inei.gob.pe">INEI</a>.'
@@ -65,65 +65,77 @@ $(function () {
             name: "Distrito de Chala",
             colorByPoint: false,
             data: [{
-                name: "Red Pública",
-                y: 10.2,
-                drilldown: "RP-Chala"
+                name: "Tierra",
+                y: 32.9,
+                drilldown: null
+            }, {
+                name: "Cemento",
+                y: 59.6,
+                drilldown: null
+            }, {
+                name: "Losetas o Terrazos",
+                y: 5.8,
+                drilldown: null
             }, {
                 name: "Otro Tipo",
-                y: 89.8,
+                y: 1.7,
                 drilldown: "Otro-Chala"
             }]
         }, {
             name: "Provincia de Caravelí",
             colorByPoint: false,
             data: [{
-                name: "Red Pública",
-                y: 48.6,
-                drilldown: "RP-Caravelí"
+                name: "Tierra",
+                y: 42.7,
+                drilldown: null
+            }, {
+                name: "Cemento",
+                y: 53.7,
+                drilldown: null
+            }, {
+                name: "Losetas o Terrazos",
+                y: 2.3,
+                drilldown: null
             }, {
                 name: "Otro Tipo",
-                y: 51.4,
+                y: 1.3,
                 drilldown: "Otro-Caravelí"
             }]
         }, {
             name: "Perú",
             colorByPoint: false,
             data: [{
-                name: "Red Pública",
-                y: 67.4,
-                drilldown: "RP-Perú"
+                name: "Tierra",
+                y: 43.4,
+                drilldown: null
+            }, {
+                name: "Cemento",
+                y: 38.2,
+                drilldown: null
+            }, {
+                name: "Losetas o Terrazos",
+                y: 9.3,
+                drilldown: null
             }, {
                 name: "Otro Tipo",
-                y: 32.6,
+                y: 9.1,
                 drilldown: "Otro-Perú"
             }]
         }],
         
         drilldown: {
             series: [{
-                name: "Red Pública - Chala",
-                id: "RP-Chala",
-                data: [["RP en la vivienda", 6.6], ["RP fuera de la vivienda", 2.8], ["Pilón de uso público", 0.8]]
-            }, {
                 name: "Otro Tipo - Chala",
                 id: "Otro-Chala",
-                data: [["Camión-cisterna", 81.4], ["Pozo", 6.3], ["Río o acequia", 1.0], ["Vecino", 0.4], ["Otro", 0.7]]
-            }, {
-                name: "Red Pública - Caravelí",
-                id: "RP-Caravelí",
-                data: [["RP en la vivienda", 41.8], ["RP fuera de la vivienda", 5.1], ["Pilón de uso público", 1.7]]
+                data: [["Parquet o madera pulida", 0.5], ["Madera o entablados", 1.1], ["Láminas asfálticas", 0.0], ["Otro", 0.1]]
             }, {
                 name: "Otro Tipo - Caravelí",
                 id: "Otro-Caravelí",
-                data: [["Camión-cisterna", 26.4], ["Pozo", 5.8], ["Río o acequia", 16.3], ["Vecino", 1.9], ["Otro", 1.0]]
-            }, {
-                name: "Red Pública - Perú",
-                id: "RP-Perú",
-                data: [["RP en la vivienda", 54.8], ["RP fuera de la vivienda", 8.9], ["Pilón de uso público", 3.8]]
+                data: [["Parquet o madera pulida", 0.2], ["Madera o entablados", 0.7], ["Láminas asfálticas", 0.2], ["Otro", 0.2]]
             }, {
                 name: "Otro Tipo - Perú",
                 id: "Otro-Perú",
-                data: [["Camión-cisterna", 4.2], ["Pozo", 8.1], ["Río o acequia", 16.0], ["Vecino", 3.2], ["Otro", 1.2]]
+                data: [["Parquet o madera pulida", 4.5], ["Madera o entablados", 3.4], ["Láminas asfálticas", 0.7], ["Otro", 0.5]]
             }]
         }
     });

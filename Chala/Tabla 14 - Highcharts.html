@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Highcharts - jsFiddle demo</title>
+  
+  
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.js'></script>
+  
+<script type='text/javascript'>
+
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Viviendas en Caravelí con alumbrado eléctrico en el 2007'
+        },
+
+        exporting: {
+            enabled: false
+        },
+
+        xAxis: {
+            categories: ['Distrito de Chala', 'Provincia de Caravelí', 'Perú']
+        },
+        yAxis: {
+            min: 0,
+            max: 100,
+            title: {
+                text: 'En porcentajes'
+            }
+        },
+        legend: {
+            reversed: true
+        },
+        plotOptions: {
+            series: {
+                stacking: 'normal'
+            }
+        },
+        series: [{
+            name: 'Viviendas con alumbrado',
+            data: [73, 64, 74],
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}%</b><br/>'
+            }
+        }]
+    });
+});
+
+</script>
+
+</head>
+<body>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+  
+</body>
+</html>

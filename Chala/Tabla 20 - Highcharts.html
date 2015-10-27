@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Highcharts Demo - jsFiddle demo</title>
+  
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.js'></script>
+  
+
+<script type='text/javascript'>
+
+$(function () {
+
+
+    // Se pone el texto del boton de retroceder en el drilldown con esta opcion
+    Highcharts.setOptions({
+        lang: {
+            drillUpText: '<- Atrás'
+        }
+    });
+    // Create the chart
+    $('#container').highcharts({
+        chart: {
+            type: 'pie'
+        },
+        title: {
+            text: 'Principales cultivos en Caravelí en el 2012'
+        },
+        subtitle: {
+            text: 'Ordenados según superficie cultivada'
+        },
+        plotOptions: {
+            series: {
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}: {point.y:.1f}%'
+                }
+            }
+        },
+
+        series: [{
+            
+            name: "Cultivos",
+            
+            colorByPoint: true,
+            
+            tooltip: {
+                headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+                pointFormat: '<span><b>{point.name}: </b>{point.superficie} de {point.totale} hectáreas</span>'
+            },
+            
+            data: [{
+                name: "Olivo",
+                y: 54.7,
+                drilldown: "Olivo",
+                superficie: "4,396",
+                totale: "8,037"
+            }, {
+                name: "Alfalfa",
+                y: 11.7,
+                drilldown: "Alfalfa",
+                superficie: "941",
+                totale: "8,037"
+            }, {
+                name: "Palto",
+                y: 11.6,
+                drilldown: "Palto",
+                superficie: "933",
+                totale: "8,037"
+            }, {
+                name: "Vergel Frutícola",
+                y: 4.1,
+                drilldown: "Vergel Frutícola",
+                superficie: "326",
+                totale: "8,037"
+            }, {
+                name: "Maíz Amarillo Duro",
+                y: 4.0,
+                drilldown: "Maíz Amarillo Duro",
+                superficie: "324",
+                totale: "8,037"
+            }, {
+                name: "Algodón",
+                y: 2.2,
+                drilldown: "Algodón",
+                superficie: "176",
+                totale: "8,037"
+            }, {
+                name: "Papa Blanca",
+                y: 1.7,
+                drilldown: "Papa Blanca",
+                superficie: "137",
+                totale: "8,037"
+            }, {
+                name: "Otros Cultivos",
+                y: 10.0,
+                drilldown: null,
+                superficie: "804",
+                totale: "8,037"
+            }]
+        }],
+        
+        drilldown: {
+            series: [{
+                name: "Olivo",
+                id: "Olivo",
+                tooltip: {
+                    headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+                    pointFormat: '<span><b>{point.name}: </b>{point.superficie2} de {point.totale2} hectáreas</span>'
+                },
+                data: [
+                    {name: "Venta", y: 97.9, superficie2:"4,305", totale2: "4,396"},
+                    {name: "Consumo Propio", y: 1.5, superficie2:"68", totale2: "4,396"},
+                    {name: "Insumo Productivo", y: 0.5, superficie2:"23", totale2: "4,396"}
+                ]
+            
+            }, {
+                name: "Alfalfa",
+                id: "Alfalfa",
+                tooltip: {
+                    headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+                    pointFormat: '<span><b>{point.name}: </b>{point.superficie2} de {point.totale2} hectáreas</span>'
+                },
+                data: [
+                    {name: "Venta", y: 31.1, superficie2:"292", totale2: "941"},
+                    {name: "Consumo Propio", y: 68.3, superficie2:"643", totale2: "941"},
+                    {name: "Insumo Productivo", y: 0.7, superficie2:"6", totale2: "941"}
+                ]
+
+            }, {
+                name: "Palto",
+                id: "Palto",
+                tooltip: {
+                    headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+                    pointFormat: '<span><b>{point.name}: </b>{point.superficie2} de {point.totale2} hectáreas</span>'
+                },
+                data: [
+                    {name: "Venta", y: 99.6, superficie2:"929", totale2: "933"},
+                    {name: "Consumo Propio", y: 0.4, superficie2:"3", totale2: "933"},
+                    {name: "Insumo Productivo", y: 0.0, superficie2:"0", totale2: "933"}
+                ]                
+
+            }, {
+                name: "Vergel Frutícola",
+                id: "Vergel Frutícola",
+                tooltip: {
+                    headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+                    pointFormat: '<span><b>{point.name}: </b>{point.superficie2} de {point.totale2} hectáreas</span>'
+                },
+                data: [
+                    {name: "Venta", y: 81.2, superficie2:"264", totale2: "326"},
+                    {name: "Consumo Propio", y: 14.0, superficie2:"46", totale2: "326"},
+                    {name: "Insumo Productivo", y: 4.8, superficie2:"16", totale2: "326"}
+                ]                
+
+            }, {
+                name: "Maíz Amarillo Duro",
+                id: "Maíz Amarillo Duro",
+                tooltip: {
+                    headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+                    pointFormat: '<span><b>{point.name}: </b>{point.superficie2} de {point.totale2} hectáreas</span>'
+                },
+                data: [
+                    {name: "Venta", y: 96.1, superficie2:"312", totale2: "324"},
+                    {name: "Consumo Propio", y: 3.9, superficie2:"13", totale2: "324"},
+                    {name: "Insumo Productivo", y: 0.0, superficie2:"0", totale2: "324"}
+                ]
+              
+            }, {
+                name: "Algodón",
+                id: "Algodón",
+                tooltip: {
+                    headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+                    pointFormat: '<span><b>{point.name}: </b>{point.superficie2} de {point.totale2} hectáreas</span>'
+                },
+                data: [
+                    {name: "Venta", y: 100.0, superficie2:"176", totale2: "176"},
+                    {name: "Consumo Propio", y: 0.0, superficie2:"0", totale2: "176"},
+                    {name: "Insumo Productivo", y: 0.0, superficie2:"0", totale2: "176"}
+                ]
+                
+            }, {
+                name: "Papa Blanca",
+                id: "Papa Blanca",
+                tooltip: {
+                    headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+                    pointFormat: '<span><b>{point.name}: </b>{point.superficie2} de {point.totale2} hectáreas</span>'
+                },
+                data: [
+                    {name: "Venta", y: 88.5, superficie2:"121", totale2: "137"},
+                    {name: "Consumo Propio", y: 11.5, superficie2:"16", totale2: "137"},
+                    {name: "Insumo Productivo", y: 0.0, superficie2:"0", totale2: "137"}
+                ]
+            }]
+        }
+    });
+});
+
+</script>
+
+</head>
+
+<body>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/data.js"></script>
+<script src="http://code.highcharts.com/modules/drilldown.js"></script>
+
+<div id="container" style="min-width: 310px; max-width: 600px; height: 400px; margin: 0 auto"></div>
+
+</body>
+
+</html>
+
