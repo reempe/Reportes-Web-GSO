@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts Example</title>
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+		<script type="text/javascript">
+
+            $(function () {
+                $('#container').highcharts({
+                    chart: {
+                        type: 'column'
+                    },
+
+                    exporting: {
+                        enabled: false
+                    },
+
+                    title: {
+                        text: 'Evolución del IDH en la provincia de Caravelí y en el distrito de Chala'
+                    },
+                    subtitle: {
+                        text: 'Fuente: PNUD'
+                    },
+                    xAxis: {
+                        categories: ['2003', '2007', '2010', '2011', '2012'],
+                        crosshair: true
+                    },
+                    yAxis: {
+                        min: 0,
+                        title: {
+                            text: 'Índice de Desarrollo Humano'
+                        }
+                    },
+                    tooltip: {
+                        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}</td>' +
+                            '</tr><tr><td style="padding:0"><b>Puesto {point.ranking} de {point.todos}</b></td></tr>',
+                        footerFormat: '</table>',
+                        shared: false,
+                        useHTML: true
+                    },
+                    plotOptions: {
+                        column: {
+                            dataLabels: {
+                                enabled: true
+                            },
+                            pointPadding: 0.2,
+                            borderWidth: 0
+                        }
+                    },
+
+                    series: [{
+                        name: 'Provincia de Caravelí',
+                        data: [{y: 0.38, ranking: 31, tipo: 'provincial', todos: 195},
+                               {y: 0.38, ranking: 34, tipo: 'provincial', todos: 195},
+                               {y: 0.49, ranking: 25, tipo: 'provincial', todos: 195},
+                               {y: 0.50, ranking: 23, tipo: 'provincial', todos: 195},
+                               {y: 0.52, ranking: 23, tipo: 'provincial', todos: 195}]
+
+                    }, {
+                        name: 'Distrito de Chala',
+                        data: [{y: 0.38, ranking: 293, tipo: 'distrital', todos: 1834},
+                               {y: 0.40, ranking: 190, tipo: 'distrital', todos: 1834},
+                               {y: 0.49, ranking: 210, tipo: 'distrital', todos: 1834},
+                               {y: 0.50, ranking: 195, tipo: 'distrital', todos: 1834},
+                               {y: 0.52, ranking: 218, tipo: 'distrital', todos: 1834}]
+
+                    }]
+                });
+            });
+		</script>
+	</head>
+	<body>
+<script src="js/highcharts.js"></script>
+<script src="js/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+	</body>
+</html>
