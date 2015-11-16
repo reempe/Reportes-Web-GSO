@@ -10,14 +10,14 @@
 $(function () {
     $('#container').highcharts({
         chart: {
-            type: 'column'
+            type: 'bar'
         },
         title: {
-            text: 'Resultados en Comprensión Lectora de la ECE'
+            text: 'Causas que influyen en el deterioro'
         },
 
         subtitle: {
-            text: 'En porcentajes'
+            text: 'En totales'
         },
 
         exporting: {
@@ -25,12 +25,12 @@ $(function () {
         },
 
         xAxis: {
-            categories: ['Nacional 2007', 'Nacional 2010', 'Nacional 2014', '', 'Caravelí 2007', 'Caravelí 2010', 'Caravelí 2014']
+            categories: ['Otros','Fierros corroidos','Irregularidad vertical','Colapso de los elementos del entorno','Piso blando o flexible','Presenta columna cortas en los muros','Densidad inadecuada de muros','Debilitado por sobrecargas','Modificaciones en muros y columnas', 'Mano de obra y materiales de baja calidad', 'Cargas laterales pesadas', 'Napa freática alta', 'Sin construir']
         },
         yAxis: {
-            ceiling: 100,
+            
             title: {
-                text: 'Porcentaje'
+                text: 'Totales'
             }
         },
         legend: {
@@ -40,17 +40,18 @@ $(function () {
         plotOptions: {
             
             series: {
-                stacking: 'normal'
+                stacking: null
             },
             
-            column: {
+            bar: {
                 
                 dataLabels: {
                 
                     enabled: true,
-                    color: 'white',
+                    color: 'black',
                     style: {
-                        textShadow: '0 0 3px black'
+                        textShadow: '0 0 3px white',
+                        fontSize: '9px'
                     }
                 }
 
@@ -59,14 +60,11 @@ $(function () {
         },
 
         series: [{
-            name: 'Satisfactorio',
-            data: [15.9, 28.7, 43.5, null, 15.8, 32.0, 44.6]
+            name: 'A.A.H.H. Manuel Prado',
+            data: [0, 79, 2, 16, 0, 0, 9, 20, 1, 10, 2, 0, 7]
         }, {
-            name: 'En proceso',
-            data: [54.3, 47.6, 44.0, null, 67.3, 54.6, 49.1]
-        }, {
-            name: 'En inicio',
-            data: [29.8, 23.7, 12.5, null, 16.8, 13.3, 6.3 ]
+            name: 'Centro Poblado Chala',
+            data: [9, 62, 0, 47, 1, 0, 9, 16, 1, 26, 0, 1, 11]
         }]
 
     });
@@ -80,7 +78,7 @@ $(function () {
 <script src="js/modules/data.js"></script>
 
 
-<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<div id="container" style="min-width: 310px; height: 1000px; margin: 0 auto"></div>
 
     </body>
 
