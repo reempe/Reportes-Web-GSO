@@ -1,0 +1,366 @@
+
+html, body {
+max-width: 1500px;
+}
+
+
+/* Estilos de las Tablas en el Documento */
+
+table {  
+  color: #333;
+  font-family: sans-serif;
+  font-size: .9em;
+  font-weight: 300;
+  text-align: center;
+  line-height: 40px;
+  border-spacing: 0;
+  border: 1px solid #428bca;
+  width: 700px;
+  margin: 20px auto 20px 50px;
+
+  table-layout: fixed;
+}
+
+th {
+  font-weight: bold;
+  text-align: center;
+  padding: 0;
+}
+
+td {padding: 0;}
+
+thead tr {
+  background-image: linear-gradient(to bottom, #1c9fcc, #61bdd3);
+/* background: #428bca; */
+  color: #fff;
+  border: none;
+}
+
+th:first-child, td:first-child {
+  padding: 0 15px 0 20px;
+  text-align: left;
+}
+
+/* thead tr:last-child th {border-bottom: 2px solid #ddd;} */
+
+tbody tr:hover {background-color: #f0fbff;}
+
+tbody td {
+  border-bottom: 1px solid #fff;      /* Lineas Blancas */
+  background-color: #f2f2f2;           /* Fondo Gris */
+}
+
+tbody tr:last-child td {border: none;}
+
+table thead tr:last-child td {
+  text-align: center;
+  padding: 0;
+}
+
+/*Estilos particulares para cada Tabla*/
+
+/* Tablas de Poblacion */
+
+/*Tabla de Poblacion 1*/
+
+#tablapoblacion01 table {
+  width: 900px;
+  table-layout: auto;
+}
+
+#tablapoblacion01 thead {
+  line-height: 50px;
+}
+
+#tablapoblacion01 tbody {
+  line-height: 30px;
+}
+
+
+/*Tabla de Poblacion 2*/
+
+#tablapoblacion02 table {
+  width: 900px;
+}
+
+#tablapoblacion02 thead {
+  line-height: 25px;
+}
+
+#tablapoblacion02 thead tr {
+  height: 70px;
+}
+
+#tablapoblacion02 tbody {
+  line-height: 30px;
+}
+
+/*Tabla de Poblacion 4*/
+
+#tablapoblacion04 table {
+  width: 700px;
+}
+
+#tablapoblacion04 thead {
+  line-height: 30px;
+}
+
+#tablapoblacion04 tbody {
+  line-height: 30px;
+}
+
+#tablapoblacion04 th:first-child, #tablapoblacion04 td:first-child {
+  padding: 0 15px 0 20px;
+  text-align: left;
+  width: 200px;
+}
+
+#tablapoblacion04 thead tr:last-child td {
+  text-align: center;  
+}
+
+/* Tabla de IDH */
+
+#tablaidh01 table {
+  width: 500px;
+}
+
+#tablaidh01 thead {
+  line-height: 50px;
+}
+
+#tablaidh01 tbody {
+  line-height: 30px;
+}
+
+#tablaidh01 thead tr:last-child td {
+  line-height: 25px;
+}
+
+/* Tablas de Educacion*/
+
+/* Tabla de Educacion 1*/
+
+#tablaeducacion01 table {
+  width: 900px;
+}
+
+#tablaeducacion01 thead {
+  line-height: 25px;
+}
+
+#tablaeducacion01 thead tr {
+  height: 90px;
+}
+
+#tablaeducacion01 tbody {
+  line-height: 30px;
+}
+
+#tablaeducacion01 th:first-child, #tablaeducacion01 td:first-child {
+  width: 200px;
+}
+
+/* Tabla de Educacion 2*/
+
+#tablaeducacion05 table {
+  width: 900px;
+}
+
+#tablaeducacion05 thead {
+  line-height: 25px;
+}
+
+#tablaeducacion05 thead tr {
+  height: 90px;
+}
+
+#tablaeducacion05 tbody {
+  line-height: 30px;
+}
+
+/* Tablas de Salud */
+
+#tablasalud01 table {
+  width: 900px;
+}
+
+#tablasalud01 thead {
+  line-height: 40px;
+}
+
+#tablasalud01 tbody {
+  line-height: 30px;
+}
+
+#tablasalud01 thead tr th:first-child {
+  width: 150px;
+}
+
+/* Tablas de Vivienda */
+
+/* Viviendas segun acceso al agua */
+
+#tablavivienda01 table {
+  width: 900px;
+}
+
+#tablavivienda01 thead {
+  line-height: 30px;
+}
+
+#tablavivienda01 thead tr {
+  height: 80px;
+}
+
+#tablavivienda01 tbody {
+  line-height: 30px;
+}
+
+#tablavivienda01 thead tr th:first-child {
+  width: 150px;
+}
+
+/* Viviendas segun servicio de desague */
+
+#tablavivienda02 table {
+  width: 900px;
+}
+
+#tablavivienda02 thead {
+  line-height: 30px;
+}
+
+#tablavivienda02 thead tr {
+  height: 80px;
+}
+
+#tablavivienda02 tbody {
+  line-height: 30px;
+}
+
+#tablavivienda02 thead tr th:first-child {
+  width: 150px;
+}
+
+/* Viviendas segun alumbrado eléctrico */
+
+#tablavivienda03 table {
+  width: 500px;
+}
+
+#tablavivienda03 thead {
+  line-height: 30px;
+}
+
+#tablavivienda03 tbody {
+  line-height: 30px;
+}
+
+#tablavivienda03 thead tr th:first-child {
+  width: 150px;
+}
+
+/* Viviendas segun material de las paredes */
+
+#tablavivienda04 table {
+  width: 900px;
+}
+
+#tablavivienda04 thead {
+  line-height: 30px;
+}
+
+#tablavivienda04 thead tr {
+  height: 100px;
+}
+
+#tablavivienda04 tbody {
+  line-height: 30px;
+}
+
+#tablavivienda04 thead tr th:first-child {
+  width: 150px;
+}
+
+/* Viviendas segun material de los pisos */
+
+#tablavivienda05 table {
+  width: 900px;
+}
+
+#tablavivienda05 thead {
+  line-height: 30px;
+}
+
+#tablavivienda05 thead tr {
+  height: 80px;
+}
+
+#tablavivienda05 tbody {
+  line-height: 30px;
+}
+
+#tablavivienda05 thead tr th:first-child {
+  width: 150px;
+}
+
+/* Tablas de Situación Laboral */
+
+#tablatrabajo01 table {
+  width: 800px;
+}
+
+#tablatrabajo01 thead {
+  line-height: 40px;
+}
+
+#tablatrabajo01 tbody {
+  line-height: 30px;
+}
+
+#tablatrabajo01 thead tr th:first-child {
+  width: 150px;
+}
+
+
+/* Tablas de Agricultura*/
+/* Tabla de Agro 01 */
+
+#tablaagro01 table {
+  width: 900px;
+}
+
+#tablaagro01 thead {
+  line-height: 30px;
+}
+
+#tablaagro01 thead tr {
+  height: 80px;
+}
+
+#tablaagro01 tbody {
+  line-height: 30px;
+}
+
+#tablaagro01 thead tr th:first-child {
+  width: 150px;
+}
+
+/* Tabla de Agro 02 */
+
+#tablaagro02 table {
+  width: 600px;
+}
+
+#tablaagro02 thead {
+  line-height: 50px;
+}
+
+#tablaagro02 tbody {
+  line-height: 30px;
+}
+
+#tablaagro02 thead tr th:first-child {
+  width: 150px;
+}

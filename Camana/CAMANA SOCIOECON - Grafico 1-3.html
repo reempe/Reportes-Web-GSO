@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Highcharts Example</title>
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script type="text/javascript">
+
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Resultados en Comprensión Lectora de la ECE'
+        },
+
+        subtitle: {
+            text: 'En porcentajes'
+        },
+
+        exporting: {
+            enabled: false
+        },
+
+        xAxis: {
+            categories: ['Nacional 2007', 'Nacional 2010', 'Nacional 2014', 'Camaná 2007', 'Camaná 2010', 'Camaná 2014']
+        },
+        yAxis: {
+            ceiling: 100,
+            title: {
+                text: 'Porcentaje'
+            }
+        },
+        legend: {
+            reversed: true
+        },
+        
+        plotOptions: {
+            
+            series: {
+                stacking: 'normal'
+            },
+            
+            column: {
+                
+                dataLabels: {
+                
+                    enabled: true,
+                    color: 'white',
+                    style: {
+                        textShadow: '0 0 3px black'
+                    }
+                }
+
+            }
+            
+        },
+
+        series: [{
+            name: 'Satisfactorio',
+            data: [15.9, 28.7, 43.5, 22.5, 40.0, 60.0]
+        }, {
+            name: 'En proceso',
+            data: [54.3, 47.6, 44.0, 59.2, 51.0, 37.5]
+        }, {
+            name: 'En inicio',
+            data: [29.8, 23.7, 12.5, 18.2, 9.0, 2.5 ]
+        }]
+
+    });
+});
+
+        </script>
+    </head>
+    <body>
+<script src="js/highcharts.js"></script>
+<script src="js/modules/exporting.js"></script>
+<script src="js/modules/data.js"></script>
+
+
+<div id="container" style="min-width: 310px; height: 400px; width: 800px; margin: 0 auto"></div>
+
+    </body>
+
+</html>

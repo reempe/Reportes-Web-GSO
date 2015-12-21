@@ -1,0 +1,52 @@
+
+html, body {
+max-width: 1200px;
+}
+
+
+/* Estilos de las Tablas en el Documento */
+
+table {  
+  color: #333;
+  font-family: sans-serif;
+  font-size: .9em;
+  font-weight: 300;
+  text-align: center;
+  line-height: 40px;
+  border-spacing: 0;
+  border: 1px solid #428bca;
+  min-width: 800px;
+  margin: 20px auto 20px 50px;
+}
+
+th {
+  font-weight: bold;
+  text-align: center;
+  padding: 0;
+}
+
+td {padding: 0;}
+
+thead tr {
+  background: #428bca;
+  color: #fff;
+  border: none;
+}
+
+th:first-child, td:first-child {
+  padding: 0 15px 0 20px;
+  text-align: left;
+}
+
+/* thead tr:last-child th {border-bottom: 2px solid #ddd;} */
+
+tbody tr:hover {background-color: #f0fbff;}
+
+tbody td {border-bottom: 1px solid #ddd;}
+
+tbody tr:last-child td {border: none;}
+
+table thead tr:last-child td {
+  text-align: center;
+  padding: 0 0 0 1em;
+}

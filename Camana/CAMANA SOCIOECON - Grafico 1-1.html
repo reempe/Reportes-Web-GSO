@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Highcharts Example</title>
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+        <script type="text/javascript">
+
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+
+        exporting: {
+            enabled: false
+        },
+
+        title: {
+            text: 'Población por grupos de edad para los años 1993 y 2007'
+        },
+
+        subtitle: {
+            text: 'En porcentajes'
+        },
+
+        xAxis: {
+            categories: ['Camaná 1993', 'Camaná 2007', 'Perú 1993', 'Perú 2007']
+        },
+        yAxis: {
+            ceiling: 100,
+            title: {
+                text: 'Porcentaje'
+            },
+            reversedStacks: false
+        },
+        legend: {
+            reversed: false
+        },
+        plotOptions: {
+            series: {
+                stacking: 'normal'
+            },
+
+            column: {
+                
+                dataLabels: {
+                
+                    enabled: true,
+                    color: 'white',
+                    style: {
+                        textShadow: '0 0 3px black'
+                    }
+                }
+
+            }
+        },
+
+        series: [{
+            name: 'De 0 a 14 años',
+            data: [35.1, 28.1, 37.0, 30.5]
+        }, {
+            name: 'De 15 a 29 años',
+            data: [28.9, 27.1, 28.6, 27.6]
+        }, {
+            name: 'De 30 a 64 años',
+            data: [31.6, 38.7, 29.8, 35.5]
+        }, {
+            name: '65 a más años',
+            data: [4.3, 6.1, 4.6, 6.4]
+        }]
+
+    });
+});
+
+        </script>
+    </head>
+    <body>
+<script src="js/highcharts.js"></script>
+<script src="js/modules/exporting.js"></script>
+<!--<script src="js/modules/heatmap.js"></script>-->
+<script src="js/modules/data.js"></script>
+<!--<script src="js/modules/drilldown.js"></script>-->
+
+<div id="container" style="min-width: 310px; height: 400px; width: 800px; margin: 0 auto"></div>
+
+    </body>
+
+</html>
